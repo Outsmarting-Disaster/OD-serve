@@ -1,0 +1,177 @@
+{
+  "icons": {
+    "bed": "bed",
+    "wtr": "tint",
+    "net": "wifi",
+    "clo": "tshirt",
+    "eat": "utensils",
+    "pwr": "plug",
+    "med": "prescription-bottle-alt",
+    "ful": "gas-pump",
+    "sit": "exclamation",
+    "rdb": "hand-paper",
+    "dmg": "hand-paper",
+    "pwo": "exclamation",
+    "fir": "exclamation",
+    "fld": "exclamation",
+    "lot": "exclamation",
+    "cba": "hand-paper",
+    "drv": "box",
+    "tpt": "truck",
+    "cmd": "user-alt",
+    "doc": "user-md",
+    "ctz": "user",
+    "agn": "clipboard",
+    "inj": "user-injured",
+    "rpr": "hammer",
+    "lnt": "hdd",
+    "sns": "ruler",
+    "bse": "building",
+    "wrh": "warehouse",
+    "hsp": "clinic-medical",
+    "shl": "bed",
+    "str": "store-alt"
+  },
+  "categories": {
+    "main": [
+      {
+        "label": "Resource",
+        "tag": "rsc"
+      },
+      {
+        "label": "Task",
+        "tag": "tsk"
+      },
+      {
+        "label": "Situation",
+        "tag": "sit"
+      },
+      {
+        "label": "Venue",
+        "tag": "ven"
+      },
+      {
+        "label": "Person",
+        "tag": "usr"
+      }
+    ],
+    "tsk": [
+      {
+        "label": "Delivery",
+        "tag": "drv"
+      },
+      {
+        "label": "Measurement",
+        "tag": "sns"
+      },
+      {
+        "label": "Repair",
+        "tag": "rpr"
+      },
+      {
+        "label": "Survey",
+        "tag": "agn"
+      },
+      {
+        "label": "Transport",
+        "tag": "tpt"
+      }  
+    ],
+    "rsc": [
+      {
+        "label": "Clothing",
+        "tag": "clo"
+      },
+      {
+        "label": "Food",
+        "tag": "eat"
+      },
+      {
+        "label": "Fuel",
+        "tag": "ful"
+      },
+      {
+        "label": "Internet",
+        "tag": "net"
+      },
+      {
+        "label": "Lantern",
+        "tag": "lnt"
+      },
+      {
+        "label": "Medical",
+        "tag": "med"
+      },
+      {
+        "label": "Power",
+        "tag": "pwr"
+      },
+      {
+        "label": "Water",
+        "tag": "wtr"
+      }
+    ],
+    "ven": [
+      {
+        "label": "Base",
+        "tag": "bse"
+      },
+      {
+        "label": "Medical",
+        "tag": "hsp"
+      },
+      {
+        "label": "Shelter",
+        "tag": "shl"
+      },
+      {
+        "label": "Store",
+        "tag": "str"
+      },
+      {
+        "label": "Warehouse",
+        "tag": "wrh"
+      }
+    ],
+    "sit": [
+      {
+        "label": "Closure",
+        "tag": "cba"
+      },
+      {
+        "label": "Damage",
+        "tag": "dmg"
+      },
+      {
+        "label": "Debris",
+        "tag": "rdb"
+      },
+      {
+        "label": "Fire",
+        "tag": "fir"
+      },
+      {
+        "label": "Flooding",
+        "tag": "fld"
+      },
+      {
+        "label": "Outage",
+        "tag": "pwo"
+      }
+    ],
+    "usr": [
+      {
+        "label": "Citizen",
+        "tag": "ctz"
+      },
+      {
+        "label": "Doctor",
+        "tag": "doc"
+      },
+      {
+        "label": "Official",
+        "tag": "cmd"
+      }
+    ]
+  }
+}

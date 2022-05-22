@@ -1,0 +1,71 @@
+{
+    "name": "lantern-serve",
+    "version": "0.9.1",
+    "repository": "http://github.com/lantern-works/lantern-serve",
+    "license": "AGPL-3.0-only",
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.8.2",
+        "@node-minify/core": "*",
+        "body-parser": "^1.19.0",
+        "bullet-catcher": "^1.0.33",
+        "bulma": "^0.7.5",
+        "compression": "^1.7.4",
+        "directory-tree": "^2.2.3",
+        "event-emitter-es6": "^1.1.5",
+        "express": "^4.17.1",
+        "fs-extra": "7.x",
+        "geohash-distance": "*",
+        "gun": "^0.2019.612",
+        "gun-tag": "*",
+        "helmet": "^3.18.0",
+        "latlon-geohash": "*",
+        "leaflet": "^1.5.1",
+        "leaflet.locatecontrol": "^0.66.2",
+        "node-fetch": "^2.6.0",
+        "node-yaml": "*",
+        "request": "*",
+        "shortid": "*",
+        "simple-node-logger": "^18.12.22",
+        "text-encoding": "^0.7.0",
+        "typeface-montserrat": "0.0.54",
+        "vue": "^2.6.10",
+        "vue-long-press-directive": "^1.0.2"
+    },
+    "devDependencies": {
+        "browserify": "^16.2.3",
+        "mocha": "^5.2.0",
+        "should": "*",
+        "standardx": "^3.0.1",
+        "uglify-es": "^3.3.9"
+    },
+    "browser": {
+        "vue": "vue/dist/vue.common.js",
+        "sea": "gun/sea.js"
+    },
+    "scripts": {
+        "lint": "standardx",
+        "fix": "standardx --fix",
+        "test": "mocha ./test",
+        "browserify": "browserify platform/data.js --standalone LD --outfile web/public/scripts/data.js; browserify platform/apps.js --standalone LA --outfile web/public/scripts/apps.js; browserify platform/maps.js --standalone LM --outfile web/public/scripts/maps.js",
+        "uglify": "uglifyjs web/public/scripts/data.js -o web/public/scripts/data.min.js; uglifyjs web/public/scripts/apps.js -o web/public/scripts/apps.min.js;uglifyjs web/public/scripts/maps.js -o web/public/scripts/maps.min.js",
+        "pack": "npm run browserify && npm run uglify",
+        "postinstall": "npm run pack",
+        "start": "node ./web/index.js"
+    },
+    "standard": {
+        "ignore": "web/public/scripts/*"
+    },
+    "eslintConfig": {
+        "env": {
+            "node": true,
+            "commonjs": true,
+            "mocha": true
+        },
+        "rules": {
+            "indent": [
+                "error",
+                4
+            ]
+        }
+    }
+}

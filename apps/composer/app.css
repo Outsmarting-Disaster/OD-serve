@@ -1,0 +1,11 @@
+
+
+/*----------------------------------------------------------------------------*/
+#lx-app-composer-index {
+    max-width: 94%;
+    min-width: 320px;
+}
+
+#lx-app-composer-index .app-frame {
+    padding: 0;
+}

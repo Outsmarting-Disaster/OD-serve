@@ -1,0 +1,31 @@
+<div class="app-top" v-if="show_search">	
+	<div class="app-frame menu-app-frame">
+	
+		<h2>
+			{{ markers.length }} {{ 'Marker' | pluralize(markers.length) }}
+		</h2>
+
+		<section class="empty-set" v-if="filtered_markers.length == 0">
+			<p>No {{filter.label.toLowerCase()}} markers yet.</p>
+		</section>
+		<ul class="menu">
+			<li v-for="item in filtered_markers"  @click="chooseFromMenu(item)" v-bind:data-marker-id="item.id">
+				<div :class="getMarkerClass(item)"> 
+					<i :class="getMarkerIconClass(item)"></i>
+				</div>
+				<span class="icon is-large">
+					<i class="fas fa-angle-right"></i>
+				</span>
+				<span class="text"> {{ item.label || getCategory(item)}} </span>
+			</li>
+		</ul>
+		<section>
+			<div class="button is-secondary"  @click="closeMenu">
+				Close
+			</div>
+		</section>
+	</div>
+	<transition name="fade">
+        <div class="app-mask" @click.stop="searchMap"></div>
+     </transition>
+</div>          

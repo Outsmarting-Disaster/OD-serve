@@ -1,0 +1,104 @@
+<div class="app-bottom" v-if="marker" >
+	<div :class="'app-frame ' + marker.tags.join(' ')" :data-marker="marker.id" v-if="view == 'index'">
+
+
+
+        <header @click="promptForLabel">
+	   	   <h1>
+                <i v-if="marker.signatures.length" class="fa fa-check-circle"/> {{marker_title}}
+                <span v-if="username" class="icon is-small">
+                  <i class="fas fa-edit"></i>
+                </span>
+            </h1>
+
+        </header>
+
+        <section  v-if="readyForLabel">
+            <form class="marker-label-form" v-on:submit.prevent="saveLabel">
+                <input class="input" type="text" placeholder="Marker label" v-model="label">
+                <div class="button is-primary"  @click="saveLabel">
+                    Save
+                </div>
+            </form>
+        </section>
+
+        <section v-if="pingInProgress">
+            <p>Sharing with connected users&hellip;</p>
+        </section>
+
+
+        <!-- form details -->
+        <section>
+            <h2>{{scoreLabel}}</h2>
+
+
+            <button  class="score-label button" v-if="username" aria-haspopup="true" aria-controls="dropdown-menu" @click="showScoreMenu">
+                <span>{{score_label}}</span>
+                <span class="icon is-small">
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+            </button>
+
+            <div class="score-label" v-if="!username">
+                <span>{{score_label}}</span>
+            </div>
+
+
+
+      <!--       <div class="score">
+                <div @click="scoreUp" class="score-up">
+                </div>
+                <div @click="scoreDown" class="score-down">
+                </div>
+                <progress class="progress" v-bind:value="100*marker.score" max="100">{{marker.score*100}}%</progress>
+            </div> -->
+
+
+        </section>
+        <!-- end form details -->
+
+        <section v-for="note in marker._data.notes" class="note">
+            <i v-if="username" class="fa fa-minus-circle" @click="removeNote(note)" /> 
+            <p><i class="fa fa-comment" /> {{note}}</p>
+        </section>
+<!-- 
+        <section v-if="username && username === marker.owner" class="note owned">
+            <p>You own this marker.</p>
+        </section> -->
+
+
+        <section class="actions">
+            <div class="buttons is-centered">
+                <div class="button"  @click.stop="zoomIn" v-if="!maxZoom">
+                    <i class="fa fa-search-plus" />
+                </div>                      
+
+                <div class="button"  @click.stop="zoomOut" v-if="maxZoom">
+                    <i class="fa fa-search-minus" />
+                </div>
+
+
+                <div class="button"  @click.stop="showNoteForm">
+                    <i class="fa fa-sticky-note"/>
+                </div>            
+
+                <div class="button"  @click.stop="showViewers">
+                    <i class="fa fa-route"/>
+                </div>            
+                <div class="button"  @click.stop="showSettings">
+                    <i class="fa fa-ellipsis-v"/>
+                </div>
+            </div>
+
+
+        </section>
+
+        <section>
+            <div class="button is-secondary"  @click="close">
+                Close
+            </div>
+        </section>
+       
+
+	</div>
+</div>

@@ -1,0 +1,30 @@
+<div class="app-top">	
+	<div class="app-frame" :style="borderStyle">
+		<!-- new marker icon -->
+		<span @click.stop="promptForNewMarker" class="icon new">
+			<i class="fas fa-plus-circle"></i>
+		</span>
+
+		<!-- search icon -->
+		<span @click.stop="searchMap"  :class="'search icon ' + (show_search ? 'active' : 'inactive') ">
+			<i class="fas fa-search"></i>
+			<span v-if="markers.length">{{ markers.length }}</span>
+		</span>
+
+ 
+		<!-- loading text -->
+		<div class="marker-count" v-if="markers === null">
+			Loading&hellip;
+		</div> 
+
+		<!-- marker count -->
+		<div class="top-badge" v-if="!context && markers !== null"  @click="chooseMap">
+			{{ markers.length }} {{ 'Marker' | pluralize(markers.length) }}
+		</div>
+
+		<!-- context name -->
+		<div class="top-badge" v-if="context" @click="chooseMap">
+			{{ context.name }}
+		</div>
+	</div>
+</div>          

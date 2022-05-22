@@ -1,0 +1,20 @@
+version: '3'
+services:
+  link:
+      build:
+        context: ..
+        args:
+            apps: https://github.com/lantern-works/lantern-apps
+      restart: always
+      ports:
+          - 80:80
+          - 443:443
+          - 8765:8765
+      environment:
+          - CLOUD=false
+          - DB=db/stage
+          - SSL_PRIVATE_KEY=/lantern/server/web/certs/privkey.pem
+          - SSL_CERTIFICATE=/lantern/server/web/certs/cert.pem
+          - SSL_CA=/lantern/server/web/certs/SectigoRSADomainValidationSecureServerCA.crt,/lantern/server/web/certs/AddTrustExternalCARoot.crt,/lantern/server/web/certs/USERTrustRSAAddTrustCA.crt
+          - HOOK_BACKUP=/lantern/server/hooks/backup
+          - HOOK_RESTORE=/lantern/server/hooks/restore
