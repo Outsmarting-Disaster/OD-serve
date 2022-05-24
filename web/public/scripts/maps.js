@@ -15846,7 +15846,7 @@ module.exports = {
 },{}],18:[function(require,module,exports){
 module.exports = {
     id: 'ade1b05a-496f-40d1-ae23-5d5aeca37da2',
-    key: 'ZokpyarACItmA6NqGNhr',
+    key: 'voSl5rXHKEC1wVSo8JP2',
     map: 'streets'
 }
 
@@ -16579,9 +16579,9 @@ module.exports = class Map extends EventEmitter {
         if (useCloud) {
             uriParts[2] = '{s}.tile.lantern.link'
         }
-
-        this.tileHost = uriParts.join('/')
-        this.tileUri = [this.tileHost + '/styles/',
+		https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=voSl5rXHKEC1wVSo8JP2
+        this.tileHost = "https://api.maptiler.com/maps/"
+        this.tileUri = [this.tileHost,
             MaptileConfig.map, '/{z}/{x}/{y}.png?key=', MaptileConfig.key
         ].join('')
     }
@@ -16753,12 +16753,14 @@ module.exports = class Map extends EventEmitter {
     }
 
     // ------------------------------------------------------------------ CACHE
-
+	// https://api.maptiler.com/geocoding/8.528509,47.3774434.json?key=voSl5rXHKEC1wVSo8JP2
     cacheTiles (lat, lon) {
-        let uri = `${this.tileHost.replace('{s}.tile.', '')}/api/tiles/${MaptileConfig.map}/${lat}/${lon}.json?key=${MaptileConfig.key}`
+        let uri = `${this.tileHost.replace('{s}.tile.', '')}geocoding/${lat}/${lon}.json?key=${MaptileConfig.key}`
         return fetch(uri, {
             method: 'GET',
+			mode: "no-cors",
             headers: {
+
                 'Content-Type': 'application/json'
             }
         })

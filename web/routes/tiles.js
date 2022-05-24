@@ -134,7 +134,7 @@ module.exports = (serv) => {
     * Use MapTiler service to proxy and save tiles to local storage
     */
     const getTileFromCloud = (url, params, res) => {
-        let streamUrl = 'http://maps.tilehosting.com' + url
+        let streamUrl = 'https://api.maptiler.com/' + url
 
         let preq = request(streamUrl, {
             timeout: 1200
