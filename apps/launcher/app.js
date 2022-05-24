@@ -158,7 +158,7 @@
     }
 
     Component.data = {
-        title: 'Lantern Network',
+        title: 'Outsmarting Diasaster',
         slide: -1,
         max_slide: 3,
         show: false,
