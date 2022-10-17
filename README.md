@@ -1,15 +1,3 @@
-# lantern-serve
-
-This is the map-centric platform for the Lantern. All applications run on top of this server and database.
-
-
-### SSL Certificates
-
-Our server runs only in secure mode. You must generate SSL certificates to match your hosting setup. This can be done using certbot or with your preferred commercial SSL certificate provider. You can reach out to our team for certificates for now.
-
-For dev.lantern.link, we use `mkcert`. Be sure to [install mkcert](https://github.com/FiloSottile/mkcert#installation) and follow the instructions for adding the CA to your local machine.
-
-
 ### Run In NPM
 
 
